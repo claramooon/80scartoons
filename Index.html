@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>80sCartoons.info — Coming Soon</title>
+<meta name="description" content="80sCartoons.info is coming soon — the web's longest-running 80s cartoon encyclopedia, est. 1998, is back!"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream:        #f2ede4;
+  --cream-warm:   #faf5ee;
+  --teal-dark:    #2d6b7a;
+  --teal:         #3d7d8f;
+  --teal-mid:     #4a95aa;
+  --teal-light:   #7dbfd0;
+  --teal-pale:    #d4eef5;
+  --orange:       #e8956a;
+  --orange-dark:  #d4795a;
+  --orange-pale:  #fdf0e8;
+  --ink:          #1e3540;
+  --mid:          #4a6878;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–cream);
+color: var(–ink);
+font-family: ‘Nunito’, sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 40px 24px;
+overflow-x: hidden;
+position: relative;
+}
+
+/* ── BACKGROUND STRIPES ──────────────────── */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background: repeating-linear-gradient(
+180deg,
+transparent 0px,
+transparent 48px,
+rgba(77,149,170,0.04) 48px,
+rgba(77,149,170,0.04) 96px
+);
+pointer-events: none;
+z-index: 0;
+}
+
+/* Soft radial glow behind logo */
+body::after {
+content: ‘’;
+position: fixed;
+top: -10%;
+left: 50%;
+transform: translateX(-50%);
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(125,191,208,0.18) 0%, transparent 70%);
+pointer-events: none;
+z-index: 0;
+}
+
+/* ── MAIN CONTAINER ──────────────────────── */
+.container {
+position: relative;
+z-index: 2;
+max-width: 640px;
+width: 100%;
+text-align: center;
+animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LOGO ────────────────────────────────── */
+.logo-wrap {
+margin-bottom: 36px;
+animation: fadeUp 0.8s ease 0.1s both;
+}
+
+.logo-wrap img {
+width: 220px;
+height: 220px;
+object-fit: contain;
+filter: drop-shadow(0 12px 40px rgba(45,107,122,0.2));
+transition: transform 0.3s ease;
+}
+.logo-wrap img:hover {
+transform: scale(1.03) rotate(-1deg);
+}
+
+/* ── EST BADGE ───────────────────────────── */
+.est-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: var(–teal-pale);
+color: var(–teal);
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 11px;
+letter-spacing: 2.5px;
+padding: 6px 18px;
+border-radius: 50px;
+margin-bottom: 20px;
+border: 1.5px solid rgba(77,149,170,0.25);
+animation: fadeUp 0.8s ease 0.2s both;
+}
+
+/* ── HEADING ─────────────────────────────── */
+.coming-soon {
+font-family: ‘Fredoka One’, cursive;
+font-size: clamp(42px, 9vw, 72px);
+color: var(–teal-dark);
+line-height: 1;
+letter-spacing: 1px;
+margin-bottom: 6px;
+animation: fadeUp 0.8s ease 0.25s both;
+}
+.coming-soon .orange { color: var(–orange); }
+
+.coming-sub {
+font-family: ‘Fredoka One’, cursive;
+font-size: clamp(20px, 4vw, 28px);
+color: var(–teal-mid);
+letter-spacing: 0.5px;
+margin-bottom: 24px;
+animation: fadeUp 0.8s ease 0.3s both;
+}
+
+/* ── DESCRIPTION ─────────────────────────── */
+.description {
+font-size: 17px;
+font-weight: 600;
+color: var(–mid);
+line-height: 1.75;
+max-width: 480px;
+margin: 0 auto 36px;
+animation: fadeUp 0.8s ease 0.35s both;
+}
+.description strong { color: var(–orange); font-weight: 800; }
+
+/* ── DIVIDER ─────────────────────────────── */
+.divider {
+display: flex;
+align-items: center;
+gap: 14px;
+margin-bottom: 32px;
+animation: fadeUp 0.8s ease 0.4s both;
+}
+.divider-line {
+flex: 1;
+height: 1.5px;
+background: linear-gradient(90deg, transparent, var(–teal-pale), transparent);
+}
+.divider-icon { font-size: 22px; }
+
+/* ── EMAIL SIGNUP ────────────────────────── */
+.signup-wrap {
+background: var(–cream-warm);
+border: 2px solid rgba(77,149,170,0.2);
+border-radius: 24px;
+padding: 28px 32px;
+margin-bottom: 32px;
+box-shadow: 0 6px 28px rgba(45,107,122,0.08);
+animation: fadeUp 0.8s ease 0.45s both;
+}
+
+.signup-title {
+font-family: ‘Fredoka One’, cursive;
+font-size: 22px;
+color: var(–teal-dark);
+margin-bottom: 6px;
+letter-spacing: 0.3px;
+}
+.signup-sub {
+font-size: 14px;
+font-weight: 600;
+color: var(–mid);
+margin-bottom: 18px;
+}
+
+.signup-form {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.signup-input {
+flex: 1 1 200px;
+background: var(–cream);
+border: 2px solid var(–teal-pale);
+border-radius: 50px;
+padding: 12px 20px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 15px;
+font-weight: 700;
+color: var(–ink);
+outline: none;
+transition: border-color 0.2s, box-shadow 0.2s;
+}
+.signup-input::placeholder { color: var(–teal-light); }
+.signup-input:focus {
+border-color: var(–teal-mid);
+box-shadow: 0 0 0 3px rgba(77,149,170,0.12);
+}
+
+.signup-btn {
+background: var(–orange);
+color: var(–cream-warm);
+border: none;
+border-radius: 50px;
+padding: 12px 24px;
+font-family: ‘Fredoka One’, cursive;
+font-size: 18px;
+letter-spacing: 0.5px;
+cursor: pointer;
+transition: all 0.18s;
+box-shadow: 0 4px 0 var(–orange-dark);
+white-space: nowrap;
+}
+.signup-btn:hover {
+transform: translateY(2px);
+box-shadow: 0 2px 0 var(–orange-dark);
+}
+
+.signup-note {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 10px;
+color: var(–teal-light);
+letter-spacing: 1px;
+margin-top: 12px;
+}
+
+/* ── SHOW PREVIEW PILLS ──────────────────── */
+.preview-wrap {
+animation: fadeUp 0.8s ease 0.5s both;
+margin-bottom: 36px;
+}
+
+.preview-label {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+color: var(–teal-light);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.preview-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+justify-content: center;
+}
+
+.pill {
+background: var(–cream-warm);
+border: 1.5px solid rgba(77,149,170,0.2);
+border-radius: 50px;
+padding: 6px 14px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 13px;
+font-weight: 800;
+color: var(–teal);
+display: flex;
+align-items: center;
+gap: 6px;
+transition: all 0.15s;
+animation: popIn 0.4s ease both;
+}
+.pill:hover {
+background: var(–teal-pale);
+border-color: var(–teal-mid);
+transform: translateY(-2px);
+color: var(–teal-dark);
+}
+
+@keyframes popIn {
+from { opacity: 0; transform: scale(0.85); }
+to   { opacity: 1; transform: scale(1); }
+}
+
+/* stagger pills */
+.pill:nth-child(1)  { animation-delay: 0.55s; }
+.pill:nth-child(2)  { animation-delay: 0.60s; }
+.pill:nth-child(3)  { animation-delay: 0.65s; }
+.pill:nth-child(4)  { animation-delay: 0.70s; }
+.pill:nth-child(5)  { animation-delay: 0.75s; }
+.pill:nth-child(6)  { animation-delay: 0.80s; }
+.pill:nth-child(7)  { animation-delay: 0.85s; }
+.pill:nth-child(8)  { animation-delay: 0.90s; }
+.pill:nth-child(9)  { animation-delay: 0.95s; }
+.pill:nth-child(10) { animation-delay: 1.00s; }
+.pill:nth-child(11) { animation-delay: 1.05s; }
+.pill:nth-child(12) { animation-delay: 1.10s; }
+
+/* ── FOOTER ──────────────────────────────── */
+.foot {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 11px;
+color: var(–teal-light);
+letter-spacing: 1.5px;
+animation: fadeUp 0.8s ease 0.6s both;
+line-height: 2;
+}
+.foot a { color: var(–orange); text-decoration: none; }
+.foot a:hover { color: var(–orange-dark); }
+
+/* success state */
+.signup-success {
+display: none;
+background: var(–teal-pale);
+border-radius: 12px;
+padding: 14px;
+margin-top: 12px;
+font-family: ‘Fredoka One’, cursive;
+font-size: 18px;
+color: var(–teal-dark);
+letter-spacing: 0.3px;
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 500px) {
+.logo-wrap img { width: 170px; height: 170px; }
+.signup-wrap { padding: 22px 20px; }
+.signup-form { flex-direction: column; }
+.signup-btn { width: 100%; text-align: center; }
+body { padding: 32px 16px; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LOGO -->
+
+  <div class="logo-wrap">
+    <img src="https://res.cloudinary.com/donmltebd/image/upload/w_400,f_auto,q_auto/80scartoons/logo.png" alt="80sCartoons.info logo"/>
+  </div>
+
+  <!-- EST BADGE -->
+
+  <div class="est-badge">⭐ EST. 1998 · RETURNING SOON</div>
+
+  <!-- HEADING -->
+
+  <div class="coming-soon">Something <span class="orange">brilliant</span></div>
+  <div class="coming-sub">is on its way...</div>
+
+  <!-- DESCRIPTION -->
+
+  <p class="description">
+    The web's longest-running 80s cartoon encyclopedia is being lovingly rebuilt. <strong>Every show. Every character. Every theme tune.</strong> Coming back bigger and better than ever.
+  </p>
+
+  <!-- DIVIDER -->
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">📺</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- EMAIL SIGNUP -->
+
+  <div class="signup-wrap">
+    <div class="signup-title">Be the first to know! 🎉</div>
+    <div class="signup-sub">Drop your email and we'll tell you the moment we launch</div>
+    <div class="signup-form">
+      <input class="signup-input" type="email" id="emailInput" placeholder="your@email.com"/>
+      <button class="signup-btn" onclick="handleSignup()">Notify Me!</button>
+    </div>
+    <div class="signup-success" id="successMsg">🎉 You're on the list — see you soon!</div>
+    <div class="signup-note">No spam, ever. Just one email when we launch.</div>
+  </div>
+
+  <!-- SHOW PREVIEW PILLS -->
+
+  <div class="preview-wrap">
+    <div class="preview-label">Just some of what's coming...</div>
+    <div class="preview-pills">
+      <span class="pill">🐭 Danger Mouse</span>
+      <span class="pill">🐆 ThunderCats</span>
+      <span class="pill">🐻 SuperTed</span>
+      <span class="pill">🍌 Bananaman</span>
+      <span class="pill">🤖 Transformers</span>
+      <span class="pill">🌙 Button Moon</span>
+      <span class="pill">🐢 TMNT</span>
+      <span class="pill">🪤 Trap Door</span>
+      <span class="pill">🫛 Poddington Peas</span>
+      <span class="pill">✨ Willo the Wisp</span>
+      <span class="pill">🚀 Cities of Gold</span>
+      <span class="pill">📬 Postman Pat</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+
+  <div class="foot">
+    80SCARTOONS.INFO · EST. 1998<br>
+    Questions? <a href="mailto:hello@80scartoons.info">hello@80scartoons.info</a>
+  </div>
+
+</div>
+
+<script>
+function handleSignup() {
+  const input = document.getElementById('emailInput');
+  const success = document.getElementById('successMsg');
+  const form = document.querySelector('.signup-form');
+  const note = document.querySelector('.signup-note');
+
+  if (!input.value || !input.value.includes('@')) {
+    input.style.borderColor = '#e8956a';
+    input.focus();
+    setTimeout(() => input.style.borderColor = '', 1500);
+    return;
+  }
+
+  // In production this would POST to your email service
+  // For now just show the success message
+  form.style.display = 'none';
+  note.style.display = 'none';
+  success.style.display = 'block';
+}
+
+// Allow enter key to submit
+document.getElementById('emailInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleSignup();
+});
+</script>
+
+</body>
+</html>
