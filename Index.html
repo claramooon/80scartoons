@@ -1,1 +1,451 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>80sCartoons.info — Coming Soon</title>
+<meta name="description" content="80sCartoons.info is coming soon — the web's longest-running 80s cartoon encyclopedia, est. 1998, is back!"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+–cream:        #f2ede4;
+–cream-warm:   #faf5ee;
+–teal-dark:    #2d6b7a;
+–teal:         #3d7d8f;
+–teal-mid:     #4a95aa;
+–teal-light:   #7dbfd0;
+–teal-pale:    #d4eef5;
+–orange:       #e8956a;
+–orange-dark:  #d4795a;
+–ink:          #1e3540;
+–mid:          #4a6878;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–cream);
+color: var(–ink);
+font-family: ‘Nunito’, sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 40px 24px;
+overflow-x: hidden;
+position: relative;
+}
+
+/* ── SCROLLING BANNER ────────────────────── */
+.collage-wall {
+position: fixed;
+inset: 0;
+display: flex;
+flex-direction: column;
+gap: 6px;
+overflow: hidden;
+padding: 6px 0;
+z-index: 0;
+}
+
+.collage-row {
+display: flex;
+gap: 6px;
+flex-shrink: 0;
+width: max-content;
+will-change: transform;
+transform: translateZ(0);
+}
+
+.collage-row.left {
+-webkit-animation: scrollLeft linear infinite;
+animation: scrollLeft linear infinite;
+}
+.collage-row.right {
+-webkit-animation: scrollRight linear infinite;
+animation: scrollRight linear infinite;
+}
+
+@-webkit-keyframes scrollLeft  { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(-50%); } }
+@-webkit-keyframes scrollRight { from { -webkit-transform: translateX(-50%); } to { -webkit-transform: translateX(0); } }
+@keyframes scrollLeft  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+@keyframes scrollRight { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+
+.collage-thumb {
+flex-shrink: 0;
+width: 140px;
+height: 105px;
+border-radius: 10px;
+overflow: hidden;
+background: var(–teal-pale);
+}
+
+.collage-thumb img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Cream overlay */
+.collage-overlay {
+position: fixed;
+inset: 0;
+background: rgba(242,237,228,0.88);
+z-index: 1;
+pointer-events: none;
+}
+
+/* ── MAIN CONTAINER ──────────────────────── */
+.container {
+position: relative;
+z-index: 2;
+max-width: 640px;
+width: 100%;
+text-align: center;
+animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── LOGO ────────────────────────────────── */
+.logo-wrap {
+margin-bottom: 28px;
+animation: fadeUp 0.8s ease 0.1s both;
+}
+.logo-wrap img {
+width: 200px;
+height: 200px;
+object-fit: contain;
+transition: transform 0.3s ease;
+}
+.logo-wrap img:hover { transform: scale(1.03) rotate(-1deg); }
+
+/* ── EST BADGE ───────────────────────────── */
+.est-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: var(–teal-pale);
+color: var(–teal);
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 11px;
+letter-spacing: 2.5px;
+padding: 6px 18px;
+border-radius: 50px;
+margin-bottom: 20px;
+border: 1.5px solid rgba(77,149,170,0.25);
+animation: fadeUp 0.8s ease 0.2s both;
+}
+
+/* ── HEADING ─────────────────────────────── */
+.coming-soon {
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-style: normal;
+font-size: clamp(42px, 9vw, 72px);
+color: var(–teal-dark);
+line-height: 1;
+letter-spacing: 1px;
+margin-bottom: 6px;
+animation: fadeUp 0.8s ease 0.25s both;
+}
+.coming-soon .orange { color: var(–orange); }
+
+.coming-sub {
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-style: normal;
+font-size: clamp(20px, 4vw, 28px);
+color: var(–teal-mid);
+letter-spacing: 0.5px;
+margin-bottom: 24px;
+animation: fadeUp 0.8s ease 0.3s both;
+}
+
+/* ── DESCRIPTION ─────────────────────────── */
+.description {
+font-size: 17px;
+font-weight: 600;
+color: var(–mid);
+line-height: 1.75;
+max-width: 480px;
+margin: 0 auto 32px;
+animation: fadeUp 0.8s ease 0.35s both;
+}
+.description strong { color: var(–orange); font-weight: 800; }
+
+/* ── DIVIDER ─────────────────────────────── */
+.divider {
+display: flex;
+align-items: center;
+gap: 14px;
+margin-bottom: 28px;
+animation: fadeUp 0.8s ease 0.4s both;
+}
+.divider-line {
+flex: 1;
+height: 1.5px;
+background: linear-gradient(90deg, transparent, var(–teal-pale), transparent);
+}
+.divider-icon { font-size: 22px; }
+
+/* ── EMAIL SIGNUP ────────────────────────── */
+.signup-wrap {
+background: rgba(250,245,238,0.95);
+border: 2px solid rgba(77,149,170,0.2);
+border-radius: 24px;
+padding: 28px 32px;
+margin-bottom: 28px;
+box-shadow: 0 6px 28px rgba(45,107,122,0.12);
+animation: fadeUp 0.8s ease 0.45s both;
+backdrop-filter: blur(8px);
+}
+.signup-title {
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-size: 22px;
+color: var(–teal-dark);
+margin-bottom: 6px;
+}
+.signup-sub {
+font-size: 14px;
+font-weight: 600;
+color: var(–mid);
+margin-bottom: 18px;
+}
+.signup-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.instagram-btn {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+color: white;
+border-radius: 50px;
+padding: 14px 28px;
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-size: 18px;
+text-decoration: none;
+transition: all 0.18s;
+box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+margin-bottom: 4px;
+}
+.instagram-btn:hover {
+transform: translateY(2px);
+box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+opacity: 0.95;
+}
+.signup-note {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 10px;
+color: var(–teal-light);
+letter-spacing: 1px;
+margin-top: 12px;
+}
+.signup-success {
+display: none;
+background: var(–teal-pale);
+border-radius: 12px;
+padding: 14px;
+margin-top: 12px;
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-size: 18px;
+color: var(–teal-dark);
+}
+
+/* ── PILLS ───────────────────────────────── */
+.preview-wrap {
+animation: fadeUp 0.8s ease 0.5s both;
+margin-bottom: 32px;
+}
+.preview-label {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 10px;
+letter-spacing: 2px;
+color: var(–teal);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+.preview-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.pill {
+background: rgba(250,245,238,0.9);
+border: 1.5px solid rgba(77,149,170,0.2);
+border-radius: 50px;
+padding: 6px 14px;
+font-family: ‘Nunito’, sans-serif;
+font-size: 13px;
+font-weight: 800;
+color: var(–teal);
+display: flex;
+align-items: center;
+gap: 6px;
+transition: all 0.15s;
+animation: popIn 0.4s ease both;
+backdrop-filter: blur(4px);
+}
+.pill:hover { background: var(–teal-pale); border-color: var(–teal-mid); transform: translateY(-2px); color: var(–teal-dark); }
+@keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+.pill:nth-child(1)  { animation-delay: 0.55s; }
+.pill:nth-child(2)  { animation-delay: 0.60s; }
+.pill:nth-child(3)  { animation-delay: 0.65s; }
+.pill:nth-child(4)  { animation-delay: 0.70s; }
+.pill:nth-child(5)  { animation-delay: 0.75s; }
+.pill:nth-child(6)  { animation-delay: 0.80s; }
+.pill:nth-child(7)  { animation-delay: 0.85s; }
+.pill:nth-child(8)  { animation-delay: 0.90s; }
+.pill:nth-child(9)  { animation-delay: 0.95s; }
+.pill:nth-child(10) { animation-delay: 1.00s; }
+.pill:nth-child(11) { animation-delay: 1.05s; }
+.pill:nth-child(12) { animation-delay: 1.10s; }
+
+/* ── FOOTER ──────────────────────────────── */
+.foot {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 11px;
+color: var(–teal);
+letter-spacing: 1.5px;
+animation: fadeUp 0.8s ease 0.6s both;
+line-height: 2;
+}
+.foot a { color: var(–orange); text-decoration: none; }
+.foot a:hover { color: var(–orange-dark); }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media (max-width: 500px) {
+.logo-wrap img { width: 160px; height: 160px; }
+.signup-wrap { padding: 22px 20px; }
+.signup-form { flex-direction: column; }
+.signup-btn { width: 100%; text-align: center; }
+body { padding: 32px 16px; }
+.collage-thumb { width: 110px; height: 82px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.collage-row { animation: none; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="collage-wall" id="collageWall"></div>
+<div class="collage-overlay"></div>
+
+<div class="container">
+
+  <div class="logo-wrap">
+    <img src="https://res.cloudinary.com/donmltebd/image/upload/w_400,f_auto,q_auto/v1778169958/logo.png" alt="80sCartoons.info logo"/>
+  </div>
+
+  <div class="est-badge">⭐ EST. 1998 · RETURNING SOON</div>
+
+  <div class="coming-soon">Something <span class="orange">brilliant</span></div>
+  <div class="coming-sub">is on its way...</div>
+
+  <p class="description">
+    The web's longest-running 80s cartoon encyclopedia is being lovingly rebuilt. <strong>Every show. Every character. Every theme tune.</strong> Coming back bigger and better than ever.
+  </p>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">📺</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <div class="signup-wrap">
+    <div class="signup-title">Follow us for updates! 📱</div>
+    <div class="signup-sub">Stay in the loop — follow us on Instagram for sneak peeks, launch news and pure 80s nostalgia</div>
+    <a class="instagram-btn" href="https://www.instagram.com/80scartoons.info" target="_blank" rel="noopener">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Follow @80scartoons.info
+    </a>
+    <div class="signup-note">We'll post sneak peeks and updates as we build the site!</div>
+  </div>
+
+  <div class="preview-wrap">
+    <div class="preview-label">Just some of what's coming...</div>
+    <div class="preview-pills">
+      <span class="pill">🐭 Danger Mouse</span>
+      <span class="pill">🐆 ThunderCats</span>
+      <span class="pill">🐻 SuperTed</span>
+      <span class="pill">🍌 Bananaman</span>
+      <span class="pill">🤖 Transformers</span>
+      <span class="pill">🌙 Button Moon</span>
+      <span class="pill">🐢 TMNT</span>
+      <span class="pill">🪤 Trap Door</span>
+      <span class="pill">🫛 Poddington Peas</span>
+      <span class="pill">✨ Willo the Wisp</span>
+      <span class="pill">🚀 Cities of Gold</span>
+      <span class="pill">📬 Postman Pat</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    80SCARTOONS.INFO · EST. 1998
+  </div>
+
+</div>
+
+<script>
+const base = 'https://res.cloudinary.com/donmltebd/image/upload/w_280,h_210,c_fill,q_auto/';
+
+const imgs = [
+  {n:'IMG_6067_cgj9hr',e:'jpg'},{n:'IMG_6065_wtdaxf',e:'jpg'},
+  {n:'IMG_6062_yhivfy',e:'jpg'},{n:'IMG_6064_emrt2h',e:'jpg'},
+  {n:'IMG_6061_x1hhip',e:'png'},{n:'IMG_6063_azxia5',e:'jpg'},
+  {n:'IMG_6045_vui2gu',e:'jpg'},{n:'IMG_6060_kxmnjc',e:'jpg'},
+  {n:'IMG_6059_essa5k',e:'jpg'},{n:'IMG_6058_upxjbn',e:'jpg'},
+  {n:'IMG_6056_kmtnab',e:'jpg'},{n:'IMG_6057_idxcv1',e:'jpg'},
+  {n:'IMG_6051_bxnonp',e:'jpg'},{n:'IMG_6054_wcuhfs',e:'jpg'},
+  {n:'IMG_6055_paipww',e:'jpg'},{n:'IMG_6050_jnghoy',e:'jpg'},
+  {n:'IMG_6048_h0whm8',e:'jpg'},{n:'IMG_6049_cuu50g',e:'jpg'},
+  {n:'IMG_6047_ueq7g8',e:'jpg'},{n:'IMG_6046_ik7hrk',e:'jpg'},
+  {n:'IMG_6043_uzbpek',e:'jpg'},{n:'IMG_6044_wu1vlm',e:'jpg'},
+  {n:'IMG_6042_egraq4',e:'jpg'},{n:'IMG_6041_wbhy9z',e:'jpg'},
+  {n:'IMG_6040_tw2191',e:'jpg'},{n:'IMG_6039_bvfmm7',e:'jpg'},
+  {n:'IMG_6038_cofpbx',e:'jpg'},{n:'IMG_6037_tbrfon',e:'jpg'},
+  {n:'IMG_6036_nsaeqk',e:'jpg'},{n:'IMG_6035_gzuthb',e:'jpg'},
+  {n:'IMG_6033_tamwjo',e:'jpg'},{n:'IMG_6032_b4kr0z',e:'jpg'},
+  {n:'IMG_6029_rh3jcq',e:'png'},{n:'IMG_6034_l1luff',e:'jpg'},
+  {n:'IMG_6031_tbpqwv',e:'jpg'},{n:'IMG_6025_wcnc5a',e:'png'},
+  {n:'IMG_6028_nmr3gg',e:'jpg'},{n:'IMG_6023_c0tpfe',e:'png'},
+  {n:'IMG_6027_gtcf5h',e:'jpg'},{n:'IMG_6024_mhmnzf',e:'png'},
+];
+
+function buildCollage() {
+  const wall = document.getElementById('collageWall');
+  const durations = [38, 52, 44, 60, 48];
+  const dirs = ['left','right','left','right','left'];
+
+  for (let r = 0; r < 5; r++) {
+  const durations = [60, 90, 75, 105, 80];
+    const row = document.createElement('div');
+    row.className = `collage-row ${dirs[r]}`;
+    row.style.animationDuration = `${durations[r]}s`;
+    row.style.webkitAnimationDuration = `${durations[r]}s`;
+
+    // Rotate the array differently for each row to avoid same images clustering
+    const rotated = [...imgs.slice(r * 8), ...imgs.slice(0, r * 8)];
+    const shuffled = rotated.sort(() => Math.random() - 0.5);
+    [...shuffled, ...shuffled].forEach(item => {
+      const thumb = document.createElement('div');
+      thumb.className = 'collage-thumb';
+      const img = document.createElement('img');
+      img.src = `${base}${item.n}.${item.e}`;
+      img.alt = '';
+      thumb.appendChild(img);
+      row.appendChild(thumb);
+    });
+
+    wall.appendChild(row);
+  }
+}
+
+buildCollage();
+</script>
+
+</body>
+</html>
