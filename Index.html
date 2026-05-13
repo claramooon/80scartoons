@@ -57,11 +57,21 @@ display: flex;
 gap: 6px;
 flex-shrink: 0;
 width: max-content;
+will-change: transform;
+transform: translateZ(0);
 }
 
-.collage-row.left  { animation: scrollLeft  var(–dur, 40s) linear infinite; }
-.collage-row.right { animation: scrollRight var(–dur, 45s) linear infinite; }
+.collage-row.left {
+animation: scrollLeft 40s linear infinite;
+-webkit-animation: scrollLeft 40s linear infinite;
+}
+.collage-row.right {
+animation: scrollRight 50s linear infinite;
+-webkit-animation: scrollRight 50s linear infinite;
+}
 
+@-webkit-keyframes scrollLeft  { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(-50%); } }
+@-webkit-keyframes scrollRight { from { -webkit-transform: translateX(-50%); } to { -webkit-transform: translateX(0); } }
 @keyframes scrollLeft  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
 @keyframes scrollRight { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
 
@@ -427,7 +437,6 @@ function buildCollage() {
   for (let r = 0; r < 5; r++) {
     const row = document.createElement('div');
     row.className = `collage-row ${dirs[r]}`;
-    row.style.setProperty('--dur', `${durations[r]}s`);
 
     const shuffled = [...imgs].sort(() => Math.random() - 0.5);
     [...shuffled, ...shuffled].forEach(item => {
