@@ -62,12 +62,12 @@ transform: translateZ(0);
 }
 
 .collage-row.left {
-animation: scrollLeft 40s linear infinite;
--webkit-animation: scrollLeft 40s linear infinite;
+-webkit-animation: scrollLeft linear infinite;
+animation: scrollLeft linear infinite;
 }
 .collage-row.right {
-animation: scrollRight 50s linear infinite;
--webkit-animation: scrollRight 50s linear infinite;
+-webkit-animation: scrollRight linear infinite;
+animation: scrollRight linear infinite;
 }
 
 @-webkit-keyframes scrollLeft  { from { -webkit-transform: translateX(0); } to { -webkit-transform: translateX(-50%); } }
@@ -435,8 +435,11 @@ function buildCollage() {
   const dirs = ['left','right','left','right','left'];
 
   for (let r = 0; r < 5; r++) {
+  const durations = [60, 90, 75, 105, 80];
     const row = document.createElement('div');
     row.className = `collage-row ${dirs[r]}`;
+    row.style.animationDuration = `${durations[r]}s`;
+    row.style.webkitAnimationDuration = `${durations[r]}s`;
 
     const shuffled = [...imgs].sort(() => Math.random() - 0.5);
     [...shuffled, ...shuffled].forEach(item => {
