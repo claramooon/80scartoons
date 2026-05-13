@@ -8,19 +8,19 @@
 <meta name="description" content="80sCartoons.info is coming soon — the web's longest-running 80s cartoon encyclopedia, est. 1998, is back!"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
 :root {
-  --cream:        #f2ede4;
-  --cream-warm:   #faf5ee;
-  --teal-dark:    #2d6b7a;
-  --teal:         #3d7d8f;
-  --teal-mid:     #4a95aa;
-  --teal-light:   #7dbfd0;
-  --teal-pale:    #d4eef5;
-  --orange:       #e8956a;
-  --orange-dark:  #d4795a;
-  --orange-pale:  #fdf0e8;
-  --ink:          #1e3540;
-  --mid:          #4a6878;
+–cream:        #f2ede4;
+–cream-warm:   #faf5ee;
+–teal-dark:    #2d6b7a;
+–teal:         #3d7d8f;
+–teal-mid:     #4a95aa;
+–teal-light:   #7dbfd0;
+–teal-pale:    #d4eef5;
+–orange:       #e8956a;
+–orange-dark:  #d4795a;
+–ink:          #1e3540;
+–mid:          #4a6878;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,34 +40,53 @@ overflow-x: hidden;
 position: relative;
 }
 
-/* ── BACKGROUND STRIPES ──────────────────── */
-body::before {
-content: ‘’;
+/* ── SCROLLING BANNER ────────────────────── */
+.collage-wall {
 position: fixed;
 inset: 0;
-background: repeating-linear-gradient(
-180deg,
-transparent 0px,
-transparent 48px,
-rgba(77,149,170,0.04) 48px,
-rgba(77,149,170,0.04) 96px
-);
-pointer-events: none;
+display: flex;
+flex-direction: column;
+gap: 6px;
+overflow: hidden;
+padding: 6px 0;
 z-index: 0;
 }
 
-/* Soft radial glow behind logo */
-body::after {
-content: ‘’;
+.collage-row {
+display: flex;
+gap: 6px;
+flex-shrink: 0;
+}
+
+.collage-row.left  { animation: scrollLeft  var(–dur, 40s) linear infinite; }
+.collage-row.right { animation: scrollRight var(–dur, 45s) linear infinite; }
+
+@keyframes scrollLeft  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+@keyframes scrollRight { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+
+.collage-thumb {
+flex-shrink: 0;
+width: 140px;
+height: 105px;
+border-radius: 10px;
+overflow: hidden;
+background: var(–teal-pale);
+}
+
+.collage-thumb img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+
+/* Cream overlay */
+.collage-overlay {
 position: fixed;
-top: -10%;
-left: 50%;
-transform: translateX(-50%);
-width: 600px;
-height: 600px;
-background: radial-gradient(circle, rgba(125,191,208,0.18) 0%, transparent 70%);
+inset: 0;
+background: rgba(242,237,228,0.88);
+z-index: 1;
 pointer-events: none;
-z-index: 0;
 }
 
 /* ── MAIN CONTAINER ──────────────────────── */
@@ -87,20 +106,16 @@ to   { opacity: 1; transform: translateY(0); }
 
 /* ── LOGO ────────────────────────────────── */
 .logo-wrap {
-margin-bottom: 36px;
+margin-bottom: 28px;
 animation: fadeUp 0.8s ease 0.1s both;
 }
-
 .logo-wrap img {
-width: 220px;
-height: 220px;
+width: 200px;
+height: 200px;
 object-fit: contain;
 transition: transform 0.3s ease;
-mix-blend-mode: multiply;
 }
-.logo-wrap img:hover {
-transform: scale(1.03) rotate(-1deg);
-}
+.logo-wrap img:hover { transform: scale(1.03) rotate(-1deg); }
 
 /* ── EST BADGE ───────────────────────────── */
 .est-badge {
@@ -133,7 +148,7 @@ animation: fadeUp 0.8s ease 0.25s both;
 .coming-soon .orange { color: var(–orange); }
 
 .coming-sub {
-font-family: ‘Righteous’, ‘Nunito’, sans-serif;
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
 font-style: normal;
 font-size: clamp(20px, 4vw, 28px);
 color: var(–teal-mid);
@@ -149,7 +164,7 @@ font-weight: 600;
 color: var(–mid);
 line-height: 1.75;
 max-width: 480px;
-margin: 0 auto 36px;
+margin: 0 auto 32px;
 animation: fadeUp 0.8s ease 0.35s both;
 }
 .description strong { color: var(–orange); font-weight: 800; }
@@ -159,7 +174,7 @@ animation: fadeUp 0.8s ease 0.35s both;
 display: flex;
 align-items: center;
 gap: 14px;
-margin-bottom: 32px;
+margin-bottom: 28px;
 animation: fadeUp 0.8s ease 0.4s both;
 }
 .divider-line {
@@ -171,21 +186,20 @@ background: linear-gradient(90deg, transparent, var(–teal-pale), transparent);
 
 /* ── EMAIL SIGNUP ────────────────────────── */
 .signup-wrap {
-background: var(–cream-warm);
+background: rgba(250,245,238,0.95);
 border: 2px solid rgba(77,149,170,0.2);
 border-radius: 24px;
 padding: 28px 32px;
-margin-bottom: 32px;
-box-shadow: 0 6px 28px rgba(45,107,122,0.08);
+margin-bottom: 28px;
+box-shadow: 0 6px 28px rgba(45,107,122,0.12);
 animation: fadeUp 0.8s ease 0.45s both;
+backdrop-filter: blur(8px);
 }
-
 .signup-title {
-font-family: ‘Righteous’, ‘Nunito’, sans-serif;
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
 font-size: 22px;
 color: var(–teal-dark);
 margin-bottom: 6px;
-letter-spacing: 0.3px;
 }
 .signup-sub {
 font-size: 14px;
@@ -193,13 +207,7 @@ font-weight: 600;
 color: var(–mid);
 margin-bottom: 18px;
 }
-
-.signup-form {
-display: flex;
-gap: 10px;
-flex-wrap: wrap;
-}
-
+.signup-form { display: flex; gap: 10px; flex-wrap: wrap; }
 .signup-input {
 flex: 1 1 200px;
 background: var(–cream);
@@ -218,7 +226,6 @@ transition: border-color 0.2s, box-shadow 0.2s;
 border-color: var(–teal-mid);
 box-shadow: 0 0 0 3px rgba(77,149,170,0.12);
 }
-
 .signup-btn {
 background: var(–orange);
 color: var(–cream-warm);
@@ -227,17 +234,12 @@ border-radius: 50px;
 padding: 12px 24px;
 font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
 font-size: 18px;
-letter-spacing: 0.5px;
 cursor: pointer;
 transition: all 0.18s;
 box-shadow: 0 4px 0 var(–orange-dark);
 white-space: nowrap;
 }
-.signup-btn:hover {
-transform: translateY(2px);
-box-shadow: 0 2px 0 var(–orange-dark);
-}
-
+.signup-btn:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(–orange-dark); }
 .signup-note {
 font-family: ‘Share Tech Mono’, monospace;
 font-size: 10px;
@@ -245,31 +247,33 @@ color: var(–teal-light);
 letter-spacing: 1px;
 margin-top: 12px;
 }
-
-/* ── SHOW PREVIEW PILLS ──────────────────── */
-.preview-wrap {
-animation: fadeUp 0.8s ease 0.5s both;
-margin-bottom: 36px;
+.signup-success {
+display: none;
+background: var(–teal-pale);
+border-radius: 12px;
+padding: 14px;
+margin-top: 12px;
+font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
+font-size: 18px;
+color: var(–teal-dark);
 }
 
+/* ── PILLS ───────────────────────────────── */
+.preview-wrap {
+animation: fadeUp 0.8s ease 0.5s both;
+margin-bottom: 32px;
+}
 .preview-label {
 font-family: ‘Share Tech Mono’, monospace;
 font-size: 10px;
 letter-spacing: 2px;
-color: var(–teal-light);
+color: var(–teal);
 text-transform: uppercase;
 margin-bottom: 14px;
 }
-
-.preview-pills {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-justify-content: center;
-}
-
+.preview-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 .pill {
-background: var(–cream-warm);
+background: rgba(250,245,238,0.9);
 border: 1.5px solid rgba(77,149,170,0.2);
 border-radius: 50px;
 padding: 6px 14px;
@@ -282,20 +286,10 @@ align-items: center;
 gap: 6px;
 transition: all 0.15s;
 animation: popIn 0.4s ease both;
+backdrop-filter: blur(4px);
 }
-.pill:hover {
-background: var(–teal-pale);
-border-color: var(–teal-mid);
-transform: translateY(-2px);
-color: var(–teal-dark);
-}
-
-@keyframes popIn {
-from { opacity: 0; transform: scale(0.85); }
-to   { opacity: 1; transform: scale(1); }
-}
-
-/* stagger pills */
+.pill:hover { background: var(–teal-pale); border-color: var(–teal-mid); transform: translateY(-2px); color: var(–teal-dark); }
+@keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
 .pill:nth-child(1)  { animation-delay: 0.55s; }
 .pill:nth-child(2)  { animation-delay: 0.60s; }
 .pill:nth-child(3)  { animation-delay: 0.65s; }
@@ -313,7 +307,7 @@ to   { opacity: 1; transform: scale(1); }
 .foot {
 font-family: ‘Share Tech Mono’, monospace;
 font-size: 11px;
-color: var(–teal-light);
+color: var(–teal);
 letter-spacing: 1.5px;
 animation: fadeUp 0.8s ease 0.6s both;
 line-height: 2;
@@ -321,64 +315,46 @@ line-height: 2;
 .foot a { color: var(–orange); text-decoration: none; }
 .foot a:hover { color: var(–orange-dark); }
 
-/* success state */
-.signup-success {
-display: none;
-background: var(–teal-pale);
-border-radius: 12px;
-padding: 14px;
-margin-top: 12px;
-font-family: ‘Righteous’, ‘Nunito’, Arial, sans-serif;
-font-size: 18px;
-color: var(–teal-dark);
-letter-spacing: 0.3px;
-}
-
 /* ── RESPONSIVE ──────────────────────────── */
 @media (max-width: 500px) {
-.logo-wrap img { width: 170px; height: 170px; }
+.logo-wrap img { width: 160px; height: 160px; }
 .signup-wrap { padding: 22px 20px; }
 .signup-form { flex-direction: column; }
 .signup-btn { width: 100%; text-align: center; }
 body { padding: 32px 16px; }
+.collage-thumb { width: 110px; height: 82px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.collage-row { animation: none; }
 }
 </style>
 
 </head>
 <body>
 
-<div class="container">
+<div class="collage-wall" id="collageWall"></div>
+<div class="collage-overlay"></div>
 
-  <!-- LOGO -->
+<div class="container">
 
   <div class="logo-wrap">
     <img src="https://res.cloudinary.com/donmltebd/image/upload/w_400,f_auto,q_auto/v1778169958/logo.png" alt="80sCartoons.info logo"/>
   </div>
 
-  <!-- EST BADGE -->
-
   <div class="est-badge">⭐ EST. 1998 · RETURNING SOON</div>
-
-  <!-- HEADING -->
 
   <div class="coming-soon">Something <span class="orange">brilliant</span></div>
   <div class="coming-sub">is on its way...</div>
 
-  <!-- DESCRIPTION -->
-
   <p class="description">
     The web's longest-running 80s cartoon encyclopedia is being lovingly rebuilt. <strong>Every show. Every character. Every theme tune.</strong> Coming back bigger and better than ever.
   </p>
-
-  <!-- DIVIDER -->
 
   <div class="divider">
     <div class="divider-line"></div>
     <span class="divider-icon">📺</span>
     <div class="divider-line"></div>
   </div>
-
-  <!-- EMAIL SIGNUP -->
 
   <div class="signup-wrap">
     <div class="signup-title">Be the first to know! 🎉</div>
@@ -390,8 +366,6 @@ body { padding: 32px 16px; }
     <div class="signup-success" id="successMsg">🎉 You're on the list — see you soon!</div>
     <div class="signup-note">No spam, ever. Just one email when we launch.</div>
   </div>
-
-  <!-- SHOW PREVIEW PILLS -->
 
   <div class="preview-wrap">
     <div class="preview-label">Just some of what's coming...</div>
@@ -411,8 +385,6 @@ body { padding: 32px 16px; }
     </div>
   </div>
 
-  <!-- FOOTER -->
-
   <div class="foot">
     80SCARTOONS.INFO · EST. 1998<br>
     Questions? <a href="mailto:hello@80scartoons.info">hello@80scartoons.info</a>
@@ -421,27 +393,74 @@ body { padding: 32px 16px; }
 </div>
 
 <script>
+const base = 'https://res.cloudinary.com/donmltebd/image/upload/w_280,h_210,c_fill,q_auto/';
+
+const imgs = [
+  {n:'IMG_6067_cgj9hr',e:'jpg'},{n:'IMG_6065_wtdaxf',e:'jpg'},
+  {n:'IMG_6062_yhivfy',e:'jpg'},{n:'IMG_6064_emrt2h',e:'jpg'},
+  {n:'IMG_6061_x1hhip',e:'png'},{n:'IMG_6063_azxia5',e:'jpg'},
+  {n:'IMG_6045_vui2gu',e:'jpg'},{n:'IMG_6060_kxmnjc',e:'jpg'},
+  {n:'IMG_6059_essa5k',e:'jpg'},{n:'IMG_6058_upxjbn',e:'jpg'},
+  {n:'IMG_6056_kmtnab',e:'jpg'},{n:'IMG_6057_idxcv1',e:'jpg'},
+  {n:'IMG_6051_bxnonp',e:'jpg'},{n:'IMG_6054_wcuhfs',e:'jpg'},
+  {n:'IMG_6055_paipww',e:'jpg'},{n:'IMG_6050_jnghoy',e:'jpg'},
+  {n:'IMG_6048_h0whm8',e:'jpg'},{n:'IMG_6049_cuu50g',e:'jpg'},
+  {n:'IMG_6047_ueq7g8',e:'jpg'},{n:'IMG_6046_ik7hrk',e:'jpg'},
+  {n:'IMG_6043_uzbpek',e:'jpg'},{n:'IMG_6044_wu1vlm',e:'jpg'},
+  {n:'IMG_6042_egraq4',e:'jpg'},{n:'IMG_6041_wbhy9z',e:'jpg'},
+  {n:'IMG_6040_tw2191',e:'jpg'},{n:'IMG_6039_bvfmm7',e:'jpg'},
+  {n:'IMG_6038_cofpbx',e:'jpg'},{n:'IMG_6037_tbrfon',e:'jpg'},
+  {n:'IMG_6036_nsaeqk',e:'jpg'},{n:'IMG_6035_gzuthb',e:'jpg'},
+  {n:'IMG_6033_tamwjo',e:'jpg'},{n:'IMG_6032_b4kr0z',e:'jpg'},
+  {n:'IMG_6029_rh3jcq',e:'png'},{n:'IMG_6034_l1luff',e:'jpg'},
+  {n:'IMG_6031_tbpqwv',e:'jpg'},{n:'IMG_6025_wcnc5a',e:'png'},
+  {n:'IMG_6028_nmr3gg',e:'jpg'},{n:'IMG_6023_c0tpfe',e:'png'},
+  {n:'IMG_6027_gtcf5h',e:'jpg'},{n:'IMG_6024_mhmnzf',e:'png'},
+];
+
+function buildCollage() {
+  const wall = document.getElementById('collageWall');
+  const durations = [38, 52, 44, 60, 48];
+  const dirs = ['left','right','left','right','left'];
+
+  for (let r = 0; r < 5; r++) {
+    const row = document.createElement('div');
+    row.className = `collage-row ${dirs[r]}`;
+    row.style.setProperty('--dur', `${durations[r]}s`);
+
+    const shuffled = [...imgs].sort(() => Math.random() - 0.5);
+    [...shuffled, ...shuffled].forEach(item => {
+      const thumb = document.createElement('div');
+      thumb.className = 'collage-thumb';
+      const img = document.createElement('img');
+      img.src = `${base}${item.n}.${item.e}`;
+      img.alt = '';
+      thumb.appendChild(img);
+      row.appendChild(thumb);
+    });
+
+    wall.appendChild(row);
+  }
+}
+
+buildCollage();
+
 function handleSignup() {
   const input = document.getElementById('emailInput');
   const success = document.getElementById('successMsg');
   const form = document.querySelector('.signup-form');
   const note = document.querySelector('.signup-note');
-
   if (!input.value || !input.value.includes('@')) {
     input.style.borderColor = '#e8956a';
     input.focus();
     setTimeout(() => input.style.borderColor = '', 1500);
     return;
   }
-
-  // In production this would POST to your email service
-  // For now just show the success message
   form.style.display = 'none';
   note.style.display = 'none';
   success.style.display = 'block';
 }
 
-// Allow enter key to submit
 document.getElementById('emailInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') handleSignup();
 });
