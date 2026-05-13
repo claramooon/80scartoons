@@ -441,7 +441,9 @@ function buildCollage() {
     row.style.animationDuration = `${durations[r]}s`;
     row.style.webkitAnimationDuration = `${durations[r]}s`;
 
-    const shuffled = [...imgs].sort(() => Math.random() - 0.5);
+    // Rotate the array differently for each row to avoid same images clustering
+    const rotated = [...imgs.slice(r * 8), ...imgs.slice(0, r * 8)];
+    const shuffled = rotated.sort(() => Math.random() - 0.5);
     [...shuffled, ...shuffled].forEach(item => {
       const thumb = document.createElement('div');
       thumb.className = 'collage-thumb';
