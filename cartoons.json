@@ -1,0 +1,255 @@
+[
+  {
+    "title": "Danger Mouse",
+    "slug": "danger-mouse",
+    "emoji": "🐭",
+    "country": "United Kingdom",
+    "country_code": "GB",
+    "year_start": 1981,
+    "year_end": 1992,
+    "first_aired": "28 Sep 1981",
+    "last_aired": "19 Mar 1992",
+    "series": 10,
+    "episodes": 89,
+    "runtime": "10–25 minutes",
+    "network": "ITV (Thames Television)",
+    "studio": "Cosgrove Hall",
+    "created_by": "Brian Cosgrove & Mark Hall",
+    "voice_cast": "David Jason (Danger Mouse), Terry Scott (Penfold), Edward Kelsey (Colonel K / Baron Greenback), Brian Trueman (Stiletto)",
+    "tagline": "World's greatest secret agent. One eyepatch. One very nervous hamster.",
+    "overview": [
+      "Danger Mouse is a British animated comedy made by Cosgrove Hall for Thames Television. Its hero is the world's greatest secret agent, a white mouse in an eyepatch who works out of a pillar box on Baker Street, London, with his timid hamster assistant Penfold.",
+      "It ran on ITV from 1981 to 1992 and became one of the best-loved British children's cartoons of the decade. It is a gleeful spoof of spy fiction, with a particular fondness for Danger Man and James Bond. The show also did very well in America, where it was one of the first cartoons shown on Nickelodeon."
+    ],
+    "hero_image": "",
+    "characters": [
+      { "name": "Danger Mouse", "role": "Hero", "emoji": "🐭", "image": "", "desc": "The world's greatest secret agent. White mouse, black eyepatch, supremely unflappable." },
+      { "name": "Penfold", "role": "Sidekick", "emoji": "🐹", "image": "", "desc": "DM's timid hamster assistant. Loyal, bumbling and first to panic. \"Crumbs, DM!\"" },
+      { "name": "Baron Greenback", "role": "Villain", "emoji": "🐸", "image": "", "desc": "A toad with grand plans for world domination." },
+      { "name": "Stiletto", "role": "Henchman", "emoji": "🐦", "image": "", "desc": "Greenback's Italian crow henchman." },
+      { "name": "Nero", "role": "Greenback's pet", "emoji": "🐛", "image": "", "desc": "Greenback's beloved caterpillar." },
+      { "name": "Colonel K", "role": "Boss", "emoji": "🎖️", "image": "", "desc": "DM's walrus boss at HQ, forever handing out new missions." }
+    ],
+    "gallery": [],
+    "theme_tune": {
+      "title": "Danger Mouse theme",
+      "composer": "Mike Harding",
+      "youtube_id": ""
+    },
+    "watch": [],
+    "trivia": [
+      "At its peak the show drew an estimated 7.2 million viewers (on 3 January 1983), and typically 3–4 million per episode.",
+      "Danger Mouse was based on Patrick McGoohan's character in Danger Man, and was originally going to be brown.",
+      "Nickelodeon first aired it in the US on 4 June 1984. For that run Stiletto's Italian accent was changed to Cockney.",
+      "The \"DM\" on his chest caused headaches for translators. In Scots Gaelic the show is called \"Donnie Murdo\".",
+      "It spun off Count Duckula in 1988, and was revived on CBBC from 2015 to 2019."
+    ],
+    "similar": [ "superted", { "title": "Count Duckula", "year": 1988 }, "the-trap-door" ],
+    "tags": ["UK", "Comedy", "Spy", "ITV", "Thames TV", "Cosgrove Hall", "David Jason"],
+    "search_term": "Danger Mouse"
+  },
+
+  {
+    "title": "He-Man and the Masters of the Universe",
+    "short_title": "He-Man",
+    "slug": "he-man",
+    "emoji": "⚔️",
+    "country": "United States",
+    "country_code": "US",
+    "year_start": 1983,
+    "year_end": 1985,
+    "first_aired": "1983",
+    "last_aired": "1985",
+    "series": 2,
+    "episodes": 130,
+    "runtime": "23 minutes",
+    "network": "",
+    "studio": "Filmation (with Mattel)",
+    "created_by": "Filmation, based on Mattel's toy line",
+    "voice_cast": "John Erwin (He-Man / Prince Adam), Alan Oppenheimer (Skeletor / Man-At-Arms / Battle Cat), Linda Gary (Teela / Evil-Lyn)",
+    "tagline": "A sword, a talking tiger and a skull-faced villain: Eternia's Saturday-morning legend.",
+    "overview": [
+      "He-Man and the Masters of the Universe was made by the American studio Filmation to sell Mattel's toy line. Prince Adam of Eternia raises his Power Sword, becomes the mighty He-Man, and defends Castle Grayskull from the sorcerer Skeletor.",
+      "It began in 1983 and ran for two seasons of 65 episodes each, with a new episode every weekday. It became one of the defining cartoons of the decade, and it spun off She-Ra: Princess of Power in 1985."
+    ],
+    "hero_image": "",
+    "characters": [
+      { "name": "He-Man / Prince Adam", "role": "Hero", "emoji": "💪", "image": "", "desc": "Eternia's heroic prince, who becomes the most powerful man in the universe." },
+      { "name": "Skeletor", "role": "Villain", "emoji": "💀", "image": "", "desc": "The skull-faced sorcerer who wants the secrets of Castle Grayskull." },
+      { "name": "Teela", "role": "Captain of the Guard", "emoji": "🛡️", "image": "", "desc": "Brave warrior and Captain of the Royal Guard." },
+      { "name": "Man-At-Arms", "role": "Weapons master", "emoji": "🔧", "image": "", "desc": "The royal inventor and weapons master." },
+      { "name": "Orko", "role": "Court magician", "emoji": "🎩", "image": "", "desc": "A tiny floating wizard whose spells rarely go to plan." },
+      { "name": "Battle Cat", "role": "Heroic tiger", "emoji": "🐯", "image": "", "desc": "He-Man's armoured tiger, who is nervous Cringer when he isn't fighting." },
+      { "name": "Evil-Lyn", "role": "Villain", "emoji": "🧙‍♀️", "image": "", "desc": "Skeletor's scheming sorceress." },
+      { "name": "Beast Man", "role": "Villain", "emoji": "🦍", "image": "", "desc": "Skeletor's henchman, who commands wild creatures." }
+    ],
+    "gallery": [],
+    "theme_tune": {
+      "title": "He-Man and the Masters of the Universe theme",
+      "composer": "",
+      "youtube_id": ""
+    },
+    "watch": [],
+    "trivia": [
+      "It ran from 1983 to 1985 with 130 episodes, and a live-action film followed in 1987.",
+      "The 1985 film He-Man and She-Ra: The Secret of the Sword introduced She-Ra and led to her own series.",
+      "Netflix revived the franchise in 2021 with Masters of the Universe: Revelation."
+    ],
+    "similar": [ "she-ra", { "title": "ThunderCats", "year": 1985 }, { "title": "BraveStarr", "year": 1987 } ],
+    "tags": ["US", "Fantasy", "Action", "Filmation", "Mattel", "Eternia"],
+    "search_term": "He-Man Masters of the Universe"
+  },
+
+  {
+    "title": "She-Ra: Princess of Power",
+    "short_title": "She-Ra",
+    "slug": "she-ra",
+    "emoji": "👸",
+    "country": "United States",
+    "country_code": "US",
+    "year_start": 1985,
+    "year_end": 1987,
+    "first_aired": "9 Sep 1985",
+    "last_aired": "12 Dec 1987",
+    "series": 2,
+    "episodes": 93,
+    "runtime": "24 minutes",
+    "network": "",
+    "studio": "Filmation (with Mattel)",
+    "created_by": "Filmation, based on Mattel's toy line",
+    "voice_cast": "Melendy Britt (Adora / She-Ra / Catra), George DiCenzo (Hordak / Bow), Linda Gary (Glimmer / Madame Razz)",
+    "tagline": "He-Man's twin sister takes on the Horde on the magical planet of Etheria.",
+    "overview": [
+      "She-Ra: Princess of Power was the spin-off from He-Man. Adora, Prince Adam's twin sister, raised in the evil Horde, discovers her true heritage. With the Sword of Protection she becomes She-Ra and leads the Rebellion on the planet Etheria.",
+      "It ran for two seasons from 1985 to 1987, and her enemy is the cyborg Hordak. Like He-Man, it came with its own Mattel toy line, Princess of Power."
+    ],
+    "hero_image": "",
+    "characters": [
+      { "name": "Adora / She-Ra", "role": "Hero", "emoji": "✨", "image": "", "desc": "He-Man's twin sister and leader of the Rebellion." },
+      { "name": "Hordak", "role": "Villain", "emoji": "🦇", "image": "", "desc": "The cyborg leader of the Horde." },
+      { "name": "Catra", "role": "Villain", "emoji": "🐆", "image": "", "desc": "A Horde captain who can turn into a panther." },
+      { "name": "Bow", "role": "Ally", "emoji": "🏹", "image": "", "desc": "A skilled archer and loyal friend of the Rebellion." },
+      { "name": "Glimmer", "role": "Ally", "emoji": "🌟", "image": "", "desc": "The Princess of Bright Moon." },
+      { "name": "Swift Wind", "role": "Steed", "emoji": "🦄", "image": "", "desc": "She-Ra's talking winged unicorn." },
+      { "name": "Madame Razz", "role": "Ally", "emoji": "🧹", "image": "", "desc": "A scatterbrained witch and Rebellion adviser." },
+      { "name": "Kowl", "role": "Ally", "emoji": "🦉", "image": "", "desc": "A snarky koala-owl who knows Adora's secret." }
+    ],
+    "gallery": [],
+    "theme_tune": {
+      "title": "She-Ra: Princess of Power theme",
+      "composer": "Shuki Levy, Haim Saban & Erika Lane",
+      "youtube_id": ""
+    },
+    "watch": [],
+    "trivia": [
+      "A tiny creature called Loo-Kee is hidden in nearly every episode, for viewers to spot.",
+      "The first five episodes were combined into the film He-Man and She-Ra: The Secret of the Sword (1985).",
+      "A Netflix reboot, She-Ra and the Princesses of Power, followed in 2018.",
+      "The first season was released on DVD in the UK in 2009."
+    ],
+    "similar": [ "he-man", { "title": "Jem", "year": 1985 } ],
+    "tags": ["US", "Fantasy", "Action", "Filmation", "Mattel", "Etheria"],
+    "search_term": "She-Ra Princess of Power"
+  },
+
+  {
+    "title": "The Trap Door",
+    "sort_title": "Trap Door",
+    "slug": "the-trap-door",
+    "emoji": "🕳️",
+    "country": "United Kingdom",
+    "country_code": "GB",
+    "year_start": 1984,
+    "year_end": 1986,
+    "first_aired": "1984",
+    "last_aired": "",
+    "series": 2,
+    "episodes": 40,
+    "runtime": "About 4 minutes",
+    "network": "ITV (Children's ITV)",
+    "studio": "CMTB Animation / Queensgate Productions",
+    "created_by": "Terry Brain & Charlie Mills",
+    "voice_cast": "Willie Rushton (Berk, Boni, Rogg and the Thing Upstairs), Nick Shipley (Drutt)",
+    "tagline": "Whatever you do, don't open the trap door. (Berk always does.)",
+    "overview": [
+      "The Trap Door is a short stop-motion series set in a gloomy castle. Berk, the put-upon blue servant of the Thing Upstairs, spends his days cooking disgusting meals, with his skull pal Boni and his pet Drutt. Every so often something horrible creeps up through the trap door in the kitchen floor.",
+      "Created by Terry Brain and Charlie Mills, it ran for 40 episodes of around four minutes each on Children's ITV. It was marketed as a children's show, but it's unashamedly spooky and funny in a very British way."
+    ],
+    "hero_image": "",
+    "characters": [
+      { "name": "Berk", "role": "Servant", "emoji": "🔵", "image": "", "desc": "A blue servant who cooks horrible meals for the Thing Upstairs, and who is forever opening the trap door." },
+      { "name": "Boni", "role": "Skull", "emoji": "💀", "image": "", "desc": "Berk's talking skull friend. Clever, grumpy and a bit of a complainer." },
+      { "name": "Drutt", "role": "Pet", "emoji": "🕷️", "image": "", "desc": "Berk's spider-like pet, who can't resist chasing worms." },
+      { "name": "Rogg", "role": "Monster", "emoji": "👹", "image": "", "desc": "A big, friendly, not-very-bright monster." },
+      { "name": "The Thing Upstairs", "role": "Master", "emoji": "🏰", "image": "", "desc": "The demanding master of the castle, who is never seen." }
+    ],
+    "gallery": [],
+    "theme_tune": {
+      "title": "The Trap Door theme",
+      "composer": "Bob Heatlie",
+      "youtube_id": ""
+    },
+    "watch": [
+      { "platform": "ITVX", "detail": "Check current availability", "type": "stream", "icon": "📺", "url": "" },
+      { "platform": "Amazon Prime Video", "detail": "Check current availability", "type": "buy", "icon": "🛒", "url": "" }
+    ],
+    "trivia": [
+      "The theme tune was written by Bob Heatlie, who also wrote Merry Christmas Everyone for Shakin' Stevens.",
+      "The Thing Upstairs is never shown. The opening spoofs the horror introductions of Vincent Price films.",
+      "Terry Brain later worked at Aardman Animations on Wallace & Gromit and Chicken Run.",
+      "A ZX Spectrum game followed in 1986, and was runner-up for Best Original Game at the Golden Joystick Awards."
+    ],
+    "similar": [ "danger-mouse", "superted", { "title": "Stoppit and Tidyup" } ],
+    "tags": ["UK", "Horror comedy", "Stop-motion", "ITV", "Willie Rushton"],
+    "search_term": "The Trap Door Berk"
+  },
+
+  {
+    "title": "SuperTed",
+    "slug": "superted",
+    "emoji": "🧸",
+    "country": "United Kingdom (Wales)",
+    "country_code": "GB",
+    "year_start": 1982,
+    "year_end": 1986,
+    "first_aired": "1 Nov 1982",
+    "last_aired": "20 Feb 1986",
+    "series": 3,
+    "episodes": 36,
+    "runtime": "10 minutes",
+    "network": "S4C (Welsh) / BBC One (English, from 4 Oct 1983)",
+    "studio": "Siriol Animation",
+    "created_by": "Mike Young",
+    "voice_cast": "Derek Griffiths (SuperTed), Jon Pertwee (Spotty), Victor Spinetti (Texas Pete), Roy Kinnear (Bulk), Melvyn Hayes (Skeleton) — English version",
+    "tagline": "A teddy bear, a spotty alien and a pinch of cosmic dust: SuperTed saves the day.",
+    "overview": [
+      "SuperTed is a Welsh animated series about a discarded teddy bear. He's brought to life by the alien Spotty's cosmic dust, then given superpowers by Mother Nature. Whenever he says his magic words, he turns into a caped superhero and sets off to fight the cowboy villain Texas Pete and his henchmen, Bulk and Skeleton.",
+      "It began on Welsh-language channel S4C in 1982 and reached BBC One in an English version the following year. It ran for three series of 12 episodes, and it was a huge success abroad, reportedly sold to 128 countries."
+    ],
+    "hero_image": "",
+    "characters": [
+      { "name": "SuperTed", "role": "Hero", "emoji": "🧸", "image": "", "desc": "A teddy bear turned superhero by cosmic dust and Mother Nature." },
+      { "name": "Spotty", "role": "Sidekick", "emoji": "👽", "image": "", "desc": "SuperTed's bumbling alien friend from the planet Spot." },
+      { "name": "Texas Pete", "role": "Villain", "emoji": "🤠", "image": "", "desc": "A greedy cowboy and the show's main villain." },
+      { "name": "Bulk", "role": "Henchman", "emoji": "🥊", "image": "", "desc": "Texas Pete's big, dim-witted henchman." },
+      { "name": "Skeleton", "role": "Henchman", "emoji": "💀", "image": "", "desc": "Texas Pete's cowardly, flamboyant henchman." },
+      { "name": "Mother Nature", "role": "Guide", "emoji": "🌍", "image": "", "desc": "The fairy who gives SuperTed his powers." }
+    ],
+    "gallery": [],
+    "theme_tune": {
+      "title": "SuperTed theme",
+      "composer": "",
+      "youtube_id": ""
+    },
+    "watch": [],
+    "trivia": [
+      "Mike Young created SuperTed to help his son overcome a fear of the dark. He started out as a book character.",
+      "There were separate Welsh and English voice casts. Derek Griffiths played SuperTed and Jon Pertwee played Spotty in English.",
+      "The Further Adventures of SuperTed (1989), made by Hanna-Barbera, was the first British animation bought by the Disney Channel.",
+      "SuperTed starred in a road safety film for the Green Cross Code in 1986."
+    ],
+    "similar": [ "danger-mouse", "the-trap-door" ],
+    "tags": ["UK", "Wales", "Superhero", "S4C", "BBC One", "Siriol"],
+    "search_term": "SuperTed"
+  }
+]
