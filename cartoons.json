@@ -175,15 +175,26 @@
       "The Trap Door is a short stop-motion series set in a gloomy castle. Berk, the put-upon blue servant of the Thing Upstairs, spends his days cooking disgusting meals, with his skull pal Boni and his pet Drutt. Every so often something horrible creeps up through the trap door in the kitchen floor.",
       "Created by Terry Brain and Charlie Mills, it ran for 40 episodes of around four minutes each on Children's ITV. It was marketed as a children's show, but it's unashamedly spooky and funny in a very British way."
     ],
-    "hero_image": "",
+    "hero_image": "IMG_6885_sinbuf",
     "characters": [
-      { "name": "Berk", "role": "Servant", "emoji": "🔵", "image": "", "desc": "A blue servant who cooks horrible meals for the Thing Upstairs, and who is forever opening the trap door." },
-      { "name": "Boni", "role": "Skull", "emoji": "💀", "image": "", "desc": "Berk's talking skull friend. Clever, grumpy and a bit of a complainer." },
-      { "name": "Drutt", "role": "Pet", "emoji": "🕷️", "image": "", "desc": "Berk's spider-like pet, who can't resist chasing worms." },
-      { "name": "Rogg", "role": "Monster", "emoji": "👹", "image": "", "desc": "A big, friendly, not-very-bright monster." },
+      { "name": "Berk", "role": "Servant", "emoji": "🔵", "image": "IMG_6905_poox4c", "desc": "A blue servant who cooks horrible meals for the Thing Upstairs, and who is forever opening the trap door." },
+      { "name": "Boni", "role": "Skull", "emoji": "💀", "image": "IMG_6886_cnfsmq", "desc": "Berk's talking skull friend. Clever, grumpy and a bit of a complainer." },
+      { "name": "Drutt", "role": "Pet", "emoji": "🕷️", "image": "IMG_6899_u4b1qt", "desc": "Berk's spider-like pet, who can't resist chasing worms." },
+      { "name": "Rogg", "role": "Monster", "emoji": "👹", "image": "IMG_6901_vr7tz2", "desc": "A big, friendly, not-very-bright monster." },
       { "name": "The Thing Upstairs", "role": "Master", "emoji": "🏰", "image": "", "desc": "The demanding master of the castle, who is never seen." }
     ],
-    "gallery": [],
+    "gallery": [
+      { "image": "IMG_6893_gfnt29", "caption": "Berk in the castle" },
+      { "image": "IMG_6888_jcmvoj", "caption": "Berk in the castle" },
+      { "image": "IMG_6898_uvsoca", "caption": "Berk and Boni" },
+      { "image": "IMG_6895_ivdzgc", "caption": "Berk in the castle" },
+      { "image": "IMG_6896_cpomje", "caption": "A creature in the castle" },
+      { "image": "IMG_6900_coixat", "caption": "Berk in the castle" },
+      { "image": "IMG_6902_lptb9v", "caption": "Berk in the castle" },
+      { "image": "IMG_6887_t3l11w", "caption": "Berk in the castle" },
+      { "image": "IMG_6892_gikbr5", "caption": "A creature in the castle" },
+      { "image": "IMG_6884_ghk465", "caption": "Berk and Boni" }
+    ],
     "theme_tune": {
       "title": "The Trap Door theme",
       "composer": "Bob Heatlie",
