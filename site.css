@@ -168,7 +168,7 @@ body {
   margin: 0 auto;
   padding: 40px 40px 0;
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 440px;
   gap: 48px;
   align-items: flex-end;
   position: relative;
@@ -906,3 +906,6 @@ div.watch-card:hover { transform: none; border-color: var(--rule); box-shadow: 0
 .cartoon-card:hover .cartoon-card-title { color: var(--orange-dark); }
 .cartoon-card-meta { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--soft); margin-top: 4px; letter-spacing: 1px; }
 @media (max-width: 860px) { .browse-hero { padding: 32px 20px; } }
+
+/* Keep pictures landscape: ignore the fixed height in the HTML, let aspect-ratio decide */
+.hero-image-box img, .char-img, .cartoon-thumb { height: auto; }
