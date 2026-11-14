@@ -184,16 +184,16 @@
       { "name": "The Thing Upstairs", "role": "Master", "emoji": "🏰", "image": "", "desc": "The demanding master of the castle, who is never seen." }
     ],
     "gallery": [
-      { "image": "IMG_6893_gfnt29", "caption": "Berk in the castle" },
-      { "image": "IMG_6888_jcmvoj", "caption": "Berk in the castle" },
-      { "image": "IMG_6898_uvsoca", "caption": "Berk and Boni" },
-      { "image": "IMG_6895_ivdzgc", "caption": "Berk in the castle" },
-      { "image": "IMG_6896_cpomje", "caption": "A creature in the castle" },
-      { "image": "IMG_6900_coixat", "caption": "Berk in the castle" },
-      { "image": "IMG_6902_lptb9v", "caption": "Berk in the castle" },
-      { "image": "IMG_6887_t3l11w", "caption": "Berk in the castle" },
-      { "image": "IMG_6892_gikbr5", "caption": "A creature in the castle" },
-      { "image": "IMG_6884_ghk465", "caption": "Berk and Boni" }
+      "IMG_6893_gfnt29",
+      "IMG_6888_jcmvoj",
+      "IMG_6898_uvsoca",
+      "IMG_6895_ivdzgc",
+      "IMG_6896_cpomje",
+      "IMG_6900_coixat",
+      "IMG_6902_lptb9v",
+      "IMG_6887_t3l11w",
+      "IMG_6892_gikbr5",
+      "IMG_6884_ghk465"
     ],
     "theme_tune": {
       "title": "The Trap Door theme",
