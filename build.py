@@ -222,7 +222,7 @@ function updateLightbox(){
   var wrap = document.getElementById('lightboxImgWrap');
   wrap.innerHTML = '';
   var img = document.createElement('img');
-  img.src = item.src; img.alt = item.caption || '';
+  img.src = item.src; img.alt = item.alt || item.caption || '';
   wrap.appendChild(img);
   document.getElementById('lightboxCaption').textContent = item.caption || '';
   document.getElementById('lightboxCounter').textContent = (currentIndex+1) + ' / ' + galleryImages.length;
@@ -397,18 +397,20 @@ def characters_html(c):
 
 
 def gallery_html(c):
-    items = [g for g in (c.get("gallery") or []) if has(g.get("image"))]
+    raw = [{"image": g} if isinstance(g, str) else g for g in (c.get("gallery") or [])]
+    items = [g for g in raw if has(g.get("image"))]
     if not items:
         return "", []
     thumbs = ""
     js = []
     for i, g in enumerate(items):
         cap = g.get("caption", "")
+        alt = cap or "%s screenshot %d" % (display_title(c), i + 1)
         thumbs += (
             '<div class="gallery-thumb" onclick="openLightbox(%d)"><img src="%s" alt="%s" loading="lazy" width="400" height="300"/></div>'
-            % (i, esc(img_url(g["image"], 400, 300)), esc(cap))
+            % (i, esc(img_url(g["image"], 400, 300)), esc(alt))
         )
-        js.append({"src": img_url(g["image"], 900), "caption": cap})
+        js.append({"src": img_url(g["image"], 900), "caption": cap, "alt": alt})
     inner = (
         '<div class="gallery-note">LOW-RES SCREENSHOTS · VHS-ERA CAPTURES · EDITORIAL REFERENCE USE</div>'
         '<div class="gallery-grid">%s</div>' % thumbs
@@ -689,4 +691,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
