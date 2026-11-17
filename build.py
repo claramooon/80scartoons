@@ -268,7 +268,7 @@ def header_html(crumbs, by_letter):
 
 def footer_html():
     return (
-        '<footer><div class="footer-links"><a href="/">Home</a><a href="/cartoons/">A–Z of cartoons</a>'
+        '<footer><p class="footer-disclosure">As an Amazon Associate, I earn from qualifying purchases.</p><div class="footer-links"><a href="/">Home</a><a href="/cartoons/">A–Z of cartoons</a>'
         '<a href="%s" rel="noopener">Instagram</a></div>'
         "© %d <a href=\"/\">80sCartoons.info</a> — Est. 1998 — Built with nostalgia — All rights belong to their respective owners</footer>"
         % (SITE["instagram"], date.today().year)
@@ -457,7 +457,7 @@ def watch_html(c):
         cls, label = WATCH_LABELS.get(w.get("type", "buy"), WATCH_LABELS["buy"])
         inner = (
             '<span class="watch-icon">%s</span><div><div class="watch-platform">%s</div><div class="watch-detail">%s</div></div>'
-            '<span class="watch-type %s">%s</span>' % (esc(w.get("icon", "📺")), esc(w["platform"]), esc(w.get("detail", "")), cls, label)
+            '<span class="watch-type %s">%s</span>' % (esc(w.get("icon", "📺")), esc(w["platform"]), esc(w.get("detail", "")) + (" · (paid link)" if w.get("affiliate") and w.get("url") else ""), cls, label)
         )
         if w.get("url"):
             rel = "noopener sponsored" if w.get("affiliate") else "noopener"
@@ -501,13 +501,14 @@ def merch_html(c):
         rel = "noopener sponsored" if aff else "noopener"
         cards += (
             '<a class="merch-card" href="%s" target="_blank" rel="%s">'
-            '<div class="merch-retailer-badge" style="background:%s;color:#fff">%s</div>'
+            '<div class="merch-top"><div class="merch-retailer-badge" style="background:%s;color:#fff">%s</div>%s</div>'
             '<div class="merch-icon">%s</div><div class="merch-name">%s</div><div class="merch-desc">%s</div>'
             '<div class="merch-cta">%s</div></a>'
-            % (esc(m["url"]), rel, colour, esc(m["retailer"]), esc(m.get("icon", "🛍️")), esc(m["name"]),
+            % (esc(m["url"]), rel, colour, esc(m["retailer"]), '<span class="paid-tag">(paid link)</span>' if aff else "",
+               esc(m.get("icon", "🛍️")), esc(m["name"]),
                esc(m.get("desc", "")), esc(m.get("cta", "Take a look →")))
         )
-    disc = ('<p class="merch-disclaimer">🔗 Some links are affiliate links. If you buy something we may earn a small commission, at no extra cost to you.</p>'
+    disc = ('<p class="merch-disclaimer"><strong>As an Amazon Associate, I earn from qualifying purchases.</strong> Links marked “paid link” are affiliate links: if you buy something we may earn a small commission, at no extra cost to you.</p>'
             if any_aff else "")
     intro = '<div class="merch-intro">Love %s? Here are some ways to own a piece of the nostalgia.</div>' % esc(display_title(c))
     return section("Treat Yourself! 🛍️", '%s<div class="merch-grid">%s</div>%s' % (intro, cards, disc))
