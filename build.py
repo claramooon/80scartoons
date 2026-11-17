@@ -467,8 +467,11 @@ def watch_html(c):
     return section("Where to Watch", '<div class="watch-grid">%s</div>' % cards)
 
 
-def amazon_link(term):
-    return "https://%s/s?k=%s&tag=%s" % (SITE["amazon_host"], quote_plus(term), SITE["amazon_tag"])
+def amazon_link(term, dept=""):
+    url = "https://%s/s?k=%s" % (SITE["amazon_host"], quote_plus(term))
+    if dept:
+        url += "&i=%s" % dept
+    return url + "&tag=%s" % SITE["amazon_tag"]
 
 
 def merch_items(c):
@@ -477,7 +480,7 @@ def merch_items(c):
     term = c.get("search_term") or display_title(c)
     auto = [
         {"retailer": "Amazon", "icon": "💿", "name": "DVDs & Box Sets", "desc": "Look for %s on DVD" % display_title(c),
-         "cta": "Shop on Amazon →", "url": amazon_link(term + " DVD"), "affiliate": True},
+         "cta": "Shop on Amazon →", "url": amazon_link(term + " DVD", "dvd"), "affiliate": True},
         {"retailer": "Amazon", "icon": "🎁", "name": "Toys, Gifts & More", "desc": "Mugs, toys, books and keepsakes for fellow fans",
          "cta": "Browse on Amazon →", "url": amazon_link(term), "affiliate": True},
         {"retailer": "eBay", "icon": "🕹️", "name": "Vintage Collectables", "desc": "Original 80s merchandise and memorabilia",
