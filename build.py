@@ -472,10 +472,10 @@ def amazon_link(term):
 
 
 def merch_items(c):
-    if "merch" in c:
-        return c["merch"]
+    """Your own cards ("merch" in cartoons.json) come first, then the automatic Amazon/eBay ones.
+    Add "auto_merch": false to a cartoon to hide the automatic cards."""
     term = c.get("search_term") or display_title(c)
-    return [
+    auto = [
         {"retailer": "Amazon", "icon": "💿", "name": "DVDs & Box Sets", "desc": "Look for %s on DVD" % display_title(c),
          "cta": "Shop on Amazon →", "url": amazon_link(term + " DVD"), "affiliate": True},
         {"retailer": "Amazon", "icon": "🎁", "name": "Toys, Gifts & More", "desc": "Mugs, toys, books and keepsakes for fellow fans",
@@ -483,6 +483,12 @@ def merch_items(c):
         {"retailer": "eBay", "icon": "🕹️", "name": "Vintage Collectables", "desc": "Original 80s merchandise and memorabilia",
          "cta": "Search on eBay →", "url": "https://www.ebay.co.uk/sch/i.html?_nkw=%s" % quote_plus(term + " vintage"), "affiliate": False},
     ]
+    own = c.get("merch") or []
+    for m in own:
+        for field in ("retailer", "name", "url"):
+            if not m.get(field):
+                fail("\"%s\": a card in \"merch\" is missing \"%s\"." % (c["title"], field))
+    return own + (auto if c.get("auto_merch", True) else [])
 
 
 BADGE_COLOURS = {"amazon": "#ff9900", "ebay": "#222222", "truffleshuffle": "#e8001c"}
