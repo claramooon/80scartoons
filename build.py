@@ -426,7 +426,7 @@ def theme_html(c):
     if yt:
         inner += (
             '<div class="yt-label"><span class="yt-badge">▶ YouTube</span> Watch the opening theme</div>'
-            '<div class="yt-player"><iframe src="https://www.youtube.com/embed/%s?rel=0&amp;modestbranding=1" title="%s" '
+            '<div class="yt-player"><iframe src="https://www.youtube-nocookie.com/embed/%s?rel=0&amp;modestbranding=1" title="%s" '
             'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'
             % (yt, esc(name))
         )
