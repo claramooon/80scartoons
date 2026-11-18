@@ -243,10 +243,10 @@
     "hero_image": "IMG_6952_by8rsu",
     "characters": [
       { "name": "SuperTed", "role": "Hero", "emoji": "🧸", "image": "IMG_6959_jbawil", "desc": "A teddy bear turned superhero by cosmic dust and Mother Nature." },
-      { "name": "Spotty", "role": "Sidekick", "emoji": "👽", "image": "IMG_6969_rwkdks", "desc": "SuperTed's bumbling alien friend from the planet Spot." },
+      { "name": "Spotty", "role": "Sidekick", "emoji": "👽", "image": "IMG_6969_yfc5cg", "desc": "SuperTed's bumbling alien friend from the planet Spot." },
       { "name": "Texas Pete", "role": "Villain", "emoji": "🤠", "image": "IMG_6961_qbdfmq", "desc": "A greedy cowboy and the show's main villain." },
       { "name": "Skeleton", "role": "Henchman", "emoji": "💀", "image": "IMG_6957_mv4zqp", "desc": "Texas Pete's cowardly, flamboyant henchman." },
-      { "name": "Bulk", "role": "Henchman", "emoji": "🥊", "image": "IMG_6973_qjsdke", "desc": "Texas Pete's big, dim-witted henchman." },
+      { "name": "Bulk", "role": "Henchman", "emoji": "🥊", "image": "IMG_6973_wyvn8q", "desc": "Texas Pete's big, dim-witted henchman." },
       { "name": "Mother Nature", "role": "Guide", "emoji": "🌍", "image": "", "desc": "The fairy who gives SuperTed his powers." }
     ],
     "gallery": [],
