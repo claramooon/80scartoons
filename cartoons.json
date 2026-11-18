@@ -240,13 +240,13 @@
       "SuperTed is a Welsh animated series about a discarded teddy bear. He's brought to life by the alien Spotty's cosmic dust, then given superpowers by Mother Nature. Whenever he says his magic words, he turns into a caped superhero and sets off to fight the cowboy villain Texas Pete and his henchmen, Bulk and Skeleton.",
       "It began on Welsh-language channel S4C in 1982 and reached BBC One in an English version the following year. It ran for three series of 12 episodes, and it was a huge success abroad, reportedly sold to 128 countries."
     ],
-    "hero_image": "",
+    "hero_image": "IMG_6952_by8rsu",
     "characters": [
-      { "name": "SuperTed", "role": "Hero", "emoji": "🧸", "image": "", "desc": "A teddy bear turned superhero by cosmic dust and Mother Nature." },
-      { "name": "Spotty", "role": "Sidekick", "emoji": "👽", "image": "", "desc": "SuperTed's bumbling alien friend from the planet Spot." },
-      { "name": "Texas Pete", "role": "Villain", "emoji": "🤠", "image": "", "desc": "A greedy cowboy and the show's main villain." },
-      { "name": "Bulk", "role": "Henchman", "emoji": "🥊", "image": "", "desc": "Texas Pete's big, dim-witted henchman." },
-      { "name": "Skeleton", "role": "Henchman", "emoji": "💀", "image": "", "desc": "Texas Pete's cowardly, flamboyant henchman." },
+      { "name": "SuperTed", "role": "Hero", "emoji": "🧸", "image": "IMG_6959_jbawil", "desc": "A teddy bear turned superhero by cosmic dust and Mother Nature." },
+      { "name": "Spotty", "role": "Sidekick", "emoji": "👽", "image": "IMG_6969_rwkdks", "desc": "SuperTed's bumbling alien friend from the planet Spot." },
+      { "name": "Texas Pete", "role": "Villain", "emoji": "🤠", "image": "IMG_6961_qbdfmq", "desc": "A greedy cowboy and the show's main villain." },
+      { "name": "Skeleton", "role": "Henchman", "emoji": "💀", "image": "IMG_6957_mv4zqp", "desc": "Texas Pete's cowardly, flamboyant henchman." },
+      { "name": "Bulk", "role": "Henchman", "emoji": "🥊", "image": "IMG_6973_qjsdke", "desc": "Texas Pete's big, dim-witted henchman." },
       { "name": "Mother Nature", "role": "Guide", "emoji": "🌍", "image": "", "desc": "The fairy who gives SuperTed his powers." }
     ],
     "gallery": [],
